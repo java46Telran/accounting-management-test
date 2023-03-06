@@ -40,7 +40,7 @@ AccountingService accountingService;
 		Account account = new Account();
 		account.username = "test@gmail.com";
 		account.password = "12345.com";
-		account.role = "USER";
+		account.roles = new String[]{"USER"};
 		String accountJSON = mapper.writeValueAsString(account);
 		mockMvc.perform(post("http://localhost/accounts")
 				.contentType(MediaType.APPLICATION_JSON)
@@ -57,7 +57,7 @@ AccountingService accountingService;
 		Account account = new Account();
 		account.username = "test";
 		account.password = "123";
-		account.role = "USER";
+		account.roles = new String[]{"USER"};
 		String accountJSON = mapper.writeValueAsString(account);
 		mockMvc.perform(post("http://localhost/accounts")
 				.contentType(MediaType.APPLICATION_JSON)
